@@ -1,7 +1,7 @@
 ![finance](https://raw.githubusercontent.com/me50/Matthewpco/a35af7b063309942268fadd0026c823317f9bf00/CS50%20index.png?token=ARAK6X4KJ6QDPDNLI723EUC7YBVLI)
 
 # This is CS50 Finance! A Full-Stack Web App made with Python, Javascript, Flask, and SQLite.
-### Final project from [ Harvard's Introduction to Computer Science CS50. ](https://www.edx.org/course/cs50s-introduction-to-computer-science) The first course of a two part, 24-week program in [Professional Web Programming.](https://www.edx.org/professional-certificate/harvardx-computer-science-for-web-programming) 
+### Final project from [ Harvard's Introduction to Computer Science CS50 ](https://www.edx.org/course/cs50s-introduction-to-computer-science) Web track. The first course of a two part, 24-week program in [Professional Web Programming.](https://www.edx.org/professional-certificate/harvardx-computer-science-for-web-programming) 
 
 <br>
 
@@ -41,7 +41,7 @@
 <br>
 
 ## 🚀 Getting Started
-This project is available online at , or if you want to run it locally follow the instructions below:
+This project is available online [Here](https://harvard-cs50-finance.herokuapp.com/), or if you want to run it locally follow the instructions below:
 
 - You will need [Python](https://www.python.org/downloads/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/installation/) installed on your computer to run this application.
 - In your terminal to install dependencies execute:
