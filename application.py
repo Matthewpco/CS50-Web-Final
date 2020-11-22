@@ -232,8 +232,11 @@ def login():
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
             return apology("invalid username and/or password", 403)
 
-        # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        # Get user and store session
+        row_user = db.execute("SELECT * FROM users WHERE username = :username",
+        username=request.form.get("username"))
+
+        session["user_id"] = row_user[0]["id"]
         session["username"] = request.form.get("username")
 
         # Redirect user to home page
@@ -327,9 +330,15 @@ def register():
         else:
             db.execute("INSERT INTO users (username, hash) VALUES (:username, :hash)",
             username=get_name, hash=hash)
+           
+        # Get user and store session
+        row_user = db.execute("SELECT * FROM users WHERE username = :username",
+        username=get_name)
 
-        # Redirect user to login page
-        return redirect("/login")
+        session["user_id"] = row_user[0]["id"]
+        session["username"] = request.form.get("username")
+        # Redirect user
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
