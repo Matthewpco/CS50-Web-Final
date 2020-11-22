@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+
+<table class = "table">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Stock</th>
+            <th scope="col">Price</th>
+            <th scope="col">Symbol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"></th>
+            <td>{{ stock }}</td>
+            <td>{{ price }}</td>
+            <td>{{ symbol }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

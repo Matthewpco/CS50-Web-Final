@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <body>
+        Top performing tech stocks: Facebook (FB), Amazon (AMZN), Apple (AAPL), Netflix (NFLX), and Alphabet (GOOG)
+        <br><br>
+    </body>
+
+    <form action="/quote" method="POST">
+        <div class="form-group">
+            <input autofocus class="form-control" name="symbol" placeholder="Symbol">
+        </div>
+        <button class="btn btn-primary" type="submit" >Quote</button>
+   </form>
+
+{% endblock %}

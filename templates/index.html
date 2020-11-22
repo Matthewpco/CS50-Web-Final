@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Stock</th>
+            <th scope="col">Price</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for stock in stocks %}
+        <tr>
+            <th scope="row"></th>
+            <td class="font-weight-bold">{{ stock.name }}</td>
+            <td>{{ stock.price }}</td>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.shares }}</td>
+            <td>{{ stock.total_price }}</td>
+        </tr>
+      {% endfor %}
+      <tr>
+        <th></th>
+        <td class="font-weight-bold">Cash Available</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="font-weight-bold">{{ cash_round }}</td>
+      </tr>
+            <tr>
+        <th></th>
+        <td class="font-weight-bold">Total Value</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="font-weight-bold">{{ full_round }}</td>
+      </tr>
+
+    </tbody>
+</table>
+{% endblock %}
