@@ -107,7 +107,7 @@ def buy():
         # Used for inserting datetime into db
         dt = datetime.now()
         time = dt.strftime("%X")
-        date = date.today()
+        cdate = date.today()
 
 
         # Query API to get stock data
@@ -166,11 +166,11 @@ def buy():
             get_shares=get_shares)
 
         # Record transaction in history db
-        db.execute("INSERT INTO history ( username, operation, symbol, price, date, time, shares) VALUES ( :username, 'BUY', :symbol, :price, :date, :time, :shares)",
+        db.execute("INSERT INTO history ( username, operation, symbol, price, date, time, shares) VALUES ( :username, 'BUY', :symbol, :price, :cdate, :time, :shares)",
         username=session['username'],
         symbol=symbol,
         price=price,
-        date=date,
+        cdate=cdate,
         time=time,
         shares=get_shares)
 
@@ -351,7 +351,7 @@ def sell():
         # Used for inserting datetime into db
         dt = datetime.now()
         time = dt.strftime("%X")
-        date = date.today()
+        cdate = date.today()
 
         # Lookup info for stock and control errors
         try:
@@ -398,9 +398,11 @@ def sell():
                 symbol=symbol)
 
                 # Update shares in history
-                db.execute("UPDATE history SET shares = :shares, operation = 'SELL' WHERE username = :username AND symbol = :symbol",
+                db.execute("UPDATE history SET shares = :shares, operation = 'SELL', date = :cdate, time = :time WHERE username = :username AND symbol = :symbol",
                 shares=new_share_total,
                 username=session["username"],
+                cdate=cdate,
+                time=time,
                 symbol=symbol)
 
                 # Get cash
