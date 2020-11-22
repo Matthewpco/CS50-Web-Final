@@ -1,6 +1,6 @@
 import os
 
-from datetime import datetime
+from datetime import datetime, date, time
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
@@ -106,8 +106,9 @@ def buy():
 
         # Used for inserting datetime into db
         dt = datetime.now()
-        date = dt.strftime("%x")
         time = dt.strftime("%X")
+        date = date.today()
+
 
         # Query API to get stock data
         try:
@@ -347,9 +348,10 @@ def sell():
         # Get and store form input for easy access
         get_symbol = request.form.get("symbol")
         get_shares = request.form.get("shares")
+        # Used for inserting datetime into db
         dt = datetime.now()
-        date = dt.strftime("%x")
         time = dt.strftime("%X")
+        date = date.today()
 
         # Lookup info for stock and control errors
         try:
