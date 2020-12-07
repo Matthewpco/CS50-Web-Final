@@ -1,4 +1,4 @@
-![](cs50 index.png)
+![](https://github.com/Matthewpco/CS50-Web-Final/blob/main/CS50%20index.png)
 
 # This is CS50 Finance! A Full-Stack Web App made with Python, Javascript, Flask, and SQLite.
 ### Final project from [ Harvard's Introduction to Computer Science CS50 ](https://www.edx.org/course/cs50s-introduction-to-computer-science) Web track. The first course of a two part, 24-week program in [Professional Web Programming.](https://www.edx.org/professional-certificate/harvardx-computer-science-for-web-programming) 
