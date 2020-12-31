@@ -65,11 +65,3 @@ $ flask run
 
 
 <br>
-<br>
-
-
-## 🔒 License
-
-<br>
-
-Copyright Nov-2020: Matthew Payne
